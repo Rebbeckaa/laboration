@@ -25,7 +25,7 @@ function clearErrors() {
   existingErrors.forEach(error => error.remove());
 }
 
-// Hjälpfunktion för att visa felmeddelande under ett fält
+// Hjälpfgunktion för att visa felmeddelande under ett fält
 function showError(inputElement, message) {
   const errorElement = document.createElement('span');
   errorElement.className = 'error-message';
