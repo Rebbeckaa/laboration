@@ -29,15 +29,14 @@ function clearErrors() {
 function showError(inputElement, message) {
   const errorElement = document.createElement('span');
   errorElement.className = 'error-message';
+  errorElement.style.color = 'red';
+  errorElement.style.fontSize = '12px';
+  errorElement.style.marginTop = '4px';
+  errorElement.style.display = 'block';
   errorElement.textContent = message;
-
+  
   // Lägger till felet direkt under input-fältet
   inputElement.parentNode.appendChild(errorElement);
-}
-
-// Enkel kontroll av att e-postadressen ser ut som en e-postadress
-function isValidEmail(value) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
 registrationForm.addEventListener('submit', function(event) {
@@ -50,28 +49,21 @@ registrationForm.addEventListener('submit', function(event) {
 
   // -------------------------------------------------------------
   // Namnvalidering
-  // Fixat: kollade tidigare emailInput istället för nameInput
   // -------------------------------------------------------------
-  if (nameInput.value.trim() === '') {
+  if (nameInput.value.trim() === '') { 
     showError(nameInput, 'Namn får inte vara tomt.');
     isValid = false;
   }
 
   // -------------------------------------------------------------
   // E-postvalidering
-  // Fixat: dubbelnegationen (!x !== '') gjorde att villkoret
-  // aldrig fungerade som tänkt. Nu kollas både tomt fält och
-  // ogiltigt format.
   // -------------------------------------------------------------
-  if (emailInput.value.trim() === '') {
+  if (emailInput.value.trim() === '') { 
     showError(emailInput, 'Vänligen ange en giltig e-postadress.');
-    isValid = false;
-  } else if (!isValidEmail(emailInput.value.trim())) {
-    showError(emailInput, 'E-postadressen ser inte ut att vara giltig.');
     isValid = false;
   }
 
-  // Om formuläret är giltigt
+  // Om formuläret mot förmodan blir giltigt
   if (isValid) {
     alert('Anmälan skickad!');
     registrationForm.reset();
