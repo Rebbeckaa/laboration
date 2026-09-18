@@ -8,7 +8,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #ffffff;
-  color: #475569; /* fixat: tillräcklig kontrast mot vit bakgrund */
+  color: #64748b;
   line-height: 1.6;
 }
 
@@ -51,7 +51,7 @@ header {
   font-size: 16px;
   max-width: 680px;
   margin: 0 auto 24px auto;
-  color: #64748b; /* fixat: kontrast */
+  color: #64748b;
 }
 
 /* Hero CTA Group */
@@ -87,14 +87,6 @@ header {
   cursor: pointer;
 }
 
-/* Synlig fokusram för tangentbordsnavigering (tillgänglighet) */
-.btn-primary:focus-visible,
-.btn-secondary:focus-visible,
-.btn-submit:focus-visible {
-  outline: 3px solid #1e40af;
-  outline-offset: 2px;
-}
-
 .hero-image-wrapper {
   width: 100%;
   border-radius: 12px;
@@ -116,7 +108,7 @@ header {
 
 .event-meta-text {
   font-size: 13px;
-  color: #64748b; /* fixat: kontrast */
+  color: #64748b;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -152,7 +144,7 @@ header {
 
 .agenda-item-desc {
   font-size: 13px;
-  color: #55636f; /* fixat: var nästan osynlig (#d6d9dc) */
+  color: #64748b;
 }
 
 /* Hidden Section triggered by "Read More" */
@@ -192,7 +184,7 @@ header {
 .form-label {
   display: block;
   font-size: 11px;
-  color: #64748b; /* fixat: kontrast */
+  color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 2px;
@@ -205,22 +197,11 @@ header {
   border-radius: 6px;
   font-size: 14px;
   color: #334155;
-}
-
-.form-input:focus-visible {
-  outline: 2px solid #2563eb;
-  outline-offset: 1px;
+  outline: none;
 }
 
 .form-input::placeholder {
   color: #94a3b8;
-}
-
-.error-message {
-  color: #dc2626;
-  font-size: 12px;
-  margin-top: 4px;
-  display: block;
 }
 
 .btn-submit {
@@ -242,7 +223,7 @@ footer {
   padding: 32px 0;
   border-top: 1px solid #f1f5f9;
   font-size: 13px;
-  color: #64748b; /* fixat: kontrast */
+  color: #64748b;
 }
 
 .footer-content {
@@ -250,7 +231,6 @@ footer {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
 }
 
 .social-links {
@@ -259,7 +239,7 @@ footer {
 }
 
 .social-icon {
-  color: #475569; /* fixat: kontrast */
+  color: #64748b;
   text-decoration: none;
   font-size: 13px;
 }
