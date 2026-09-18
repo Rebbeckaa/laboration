@@ -1,0 +1,265 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #475569; /* fixat: tillräcklig kontrast mot vit bakgrund */
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header / Nav Bar */
+header {
+  padding: 24px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.brand-logo {
+  font-size: 18px;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  padding: 40px 0 30px 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.hero-intro {
+  font-size: 16px;
+  max-width: 680px;
+  margin: 0 auto 24px auto;
+  color: #64748b; /* fixat: kontrast */
+}
+
+/* Hero CTA Group */
+.hero-buttons {
+  display: inline-block;
+  margin-bottom: 32px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #60a5fa; 
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid #60a5fa;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: #2563eb; 
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid #2563eb;
+  cursor: pointer;
+}
+
+/* Synlig fokusram för tangentbordsnavigering (tillgänglighet) */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-submit:focus-visible {
+  outline: 3px solid #1e40af;
+  outline-offset: 2px;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Event Information Section */
+.event-info {
+  padding: 30px 0 50px 0;
+}
+
+.event-meta-text {
+  font-size: 13px;
+  color: #64748b; /* fixat: kontrast */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.event-description {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  color: #475569;
+}
+
+.agenda-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.agenda-item {
+  padding: 16px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border-left: 3px solid #cbd5e1;
+}
+
+.agenda-item-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+.agenda-item-desc {
+  font-size: 13px;
+  color: #55636f; /* fixat: var nästan osynlig (#d6d9dc) */
+}
+
+/* Hidden Section triggered by "Read More" */
+.more-info-content {
+  display: none;
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #1e40af;
+}
+
+/* Registration Section */
+.registration-section {
+  background-color: #f8fafc;
+  padding: 48px 0;
+  border-top: 1px solid #f1f5f9;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 24px;
+}
+
+.registration-form {
+  max-width: 480px;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  display: block;
+  font-size: 11px;
+  color: #64748b; /* fixat: kontrast */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.form-input:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+}
+
+.form-input::placeholder {
+  color: #94a3b8;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 11px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+/* Footer */
+footer {
+  background-color: #ffffff;
+  padding: 32px 0;
+  border-top: 1px solid #f1f5f9;
+  font-size: 13px;
+  color: #64748b; /* fixat: kontrast */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-icon {
+  color: #475569; /* fixat: kontrast */
+  text-decoration: none;
+  font-size: 13px;
+}
