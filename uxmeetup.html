@@ -1,71 +1,124 @@
-// Hämta element från DOM
-const readMoreBtn = document.getElementById('readMoreBtn');
-const moreInfoContent = document.getElementById('moreInfoContent');
-const registrationForm = document.querySelector('.registration-form');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UX Meetup 2027</title>
+  <link rel="stylesheet" href="UXMeetUp.css">
+</head>
+<body>
 
-// ==========================================
-// Read More / Show Less 
-// ==========================================
-readMoreBtn.addEventListener('click', function() {
-  if (moreInfoContent.style.display === 'none') {
-    moreInfoContent.style.display = 'block';
-    readMoreBtn.textContent = 'Show Less';
-  } else {
-    moreInfoContent.style.display = 'none';
-  }
-});
+  <header>
+    <div class="container">
+      <a href="#" class="brand-logo">UX Meetup 2027</a>
+    </div>
+  </header>
 
-// ==========================================
-// Formulär & Validering
-// ==========================================
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">UX Meetup 2027</h1>
+      <p class="hero-intro">
+        Join leading product designers, researchers, and interface architects for a premier day of insights, interactive sessions, and collaborative learning.
+      </p>
+      
+      <div class="hero-buttons">
+        <a href="#register" class="btn-primary">Register Now</a>
+        <button id="readMoreBtn" class="btn-secondary">Read More</button>
+      </div>
 
-// Hjälpfunktion för att ta bort tidigare felmeddelanden
-function clearErrors() {
-  const existingErrors = registrationForm.querySelectorAll('.error-message');
-  existingErrors.forEach(error => error.remove());
-}
+      <div class="hero-image-wrapper">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80" alt="Deltagare på UX-konferens">
+      </div>
+    </div>
+  </section>
 
-// Hjälpfunktion för att visa felmeddelande under ett fält
-function showError(inputElement, message) {
-  const errorElement = document.createElement('span');
-  errorElement.className = 'error-message';
-  errorElement.style.color = 'red';
-  errorElement.style.fontSize = '12px';
-  errorElement.style.marginTop = '4px';
-  errorElement.style.display = 'block';
-  errorElement.textContent = message;
-  
-  // Lägger till felet direkt under input-fältet
-  inputElement.parentNode.appendChild(errorElement);
-}
+  <section class="event-info">
+    <div class="container">
+      
+      <p class="event-meta-text">Taking place on October 14, 2027 at the Metropolitan Tech Center, 
+        Metropolitan Hall B</p>
 
-registrationForm.addEventListener('submit', function(event) {
-  event.preventDefault(); // Stoppar formuläret från att skickas direkt
-  clearErrors();
+      <p class="event-description">
+        UX Meetup 2027 provides an exceptional venue for professionals operating within 
+        digital product design, interactive software creation, usability testing, 
+        and cross-functional user research. Over the course of this single-day conference, 
+        attendees will explore emerging trends surrounding complex workflows, scalable design 
+        systems, artificial intelligence tooling integrations, inclusive interface standards, 
+        and advanced prototyping strategies. Our goal is to host open dialogue across discipline 
+        boundaries, allowing senior leaders, practical practitioners, and aspiring designers to connect,
+         evaluate modern software challenges, and refine their foundational methodologies together.
+      </p>
 
-  const nameInput = document.getElementById('fullName');
-  const emailInput = document.getElementById('emailAddr');
-  let isValid = true;
+      <div id="moreInfoContent" class="more-info-content">
+        <strong>Additional Event Schedule Details:</strong><br>
+        Doors open for check-in and morning networking at 8:30 AM. 
+        Opening keynote begins strictly at 9:15 AM in Main Hall B. 
+        Lunch and light refreshments will be provided during the 12:30 PM break.
+      </div>
 
-  // -------------------------------------------------------------
-  // Namnvalidering
-  // -------------------------------------------------------------
-  if (nameInput.value.trim() === '') { 
-    showError(nameInput, 'Namn får inte vara tomt.');
-    isValid = false;
-  }
+      <h3 class="agenda-title" style="margin-top: 32px;">Agenda Highlights</h3>
 
-  // -------------------------------------------------------------
-  // E-postvalidering
-  // -------------------------------------------------------------
-  if (emailInput.value.trim() === '') { 
-    showError(emailInput, 'Vänligen ange en giltig e-postadress.');
-    isValid = false;
-  }
+      <div class="agenda-item">
+        <div class="agenda-item-title">01. Scaling Design Systems in Enterprise Frameworks</div>
+        <div class="agenda-item-desc">A deep dive into managing design components, 
+          maintaining consistency, and aligning cross-platform token structures.</div>
+      </div>
 
-  // Om formuläret mot förmodan blir giltigt
-  if (isValid) {
-    alert('Anmälan skickad!');
-    registrationForm.reset();
-  }
-});
+      <div class="agenda-item">
+        <div class="agenda-item-title">02. Modern Usability Research & Continuous Testing</div>
+        <div class="agenda-item-desc">How agile teams integrate lightweight qualitative testing 
+          feedback cycles without delaying product releases.</div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-item-title">03. The Intersection of AI Workflows and UI Patterns</div>
+        <div class="agenda-item-desc">Analyzing real-world applications of generative interfaces, 
+          predictive input fields, and dynamic user interfaces.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="register" class="registration-section">
+    <div class="container">
+      <h2 class="section-title">Event Registration</h2>
+      
+      <form class="registration-form" novalidate>
+
+        <div class="form-group">
+          <label for="fullName" class="form-label">Name</label>
+          <input type="text" id="fullName" class="form-input" placeholder="e.g. Jane Doe">  
+        </div>
+
+        <div class="form-group">
+          <label for="emailAddr" class="form-label">Email</label>
+          <input type="email" id="emailAddr" class="form-input" placeholder="e.g. jane@company.com">
+        </div>
+
+        <div class="form-group">
+          <label for="company" class="form-label">Company</label>
+          <input type="text" id="company" class="form-input" placeholder="e.g. Acme Corporation">
+        </div>
+
+        <button type="submit" class="btn-submit">Register</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <p>Contact: events@uxmeetup2027.org | (555) 019-2834</p>
+        <p style="font-size: 11px; margin-top: 4px;">© 2027 UX Meetup Group. All rights reserved.</p>
+      </div>
+      <div class="social-links">
+        <a href="#" class="social-icon">Twitter</a>
+        <a href="#" class="social-icon">LinkedIn</a>
+        <a href="#" class="social-icon">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="UXMeetUp.js"></script>
+</body>
+</html>
